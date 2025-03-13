@@ -2,8 +2,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import nonAuthRoutes from './routes/nonAuth.js';
+import cors from "cors";
 
 const app = express();
+
+// Enable CORS
+app.use(cors());
+
 const port = process.env.PORT || 3000;
 
 // body parser middleware

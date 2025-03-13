@@ -27,7 +27,7 @@ export async function getMemberItems (memberDress, page)  {
             }
           });
         const memberId = memberDress.split("-")[0];
-        await page.goto(`https://www.vinted.fr/api/v2/users/${memberId}/items?page=${page}&per_page=20&order=relevance`)
+        await page.goto(`https://www.vinted.fr/api/v2/users/${memberId}/items?page=${page}&per_page=10000&order=relevance`)
         // select the pre element int obody
         const dressItemsBased = await page.evaluate(() => {return document.querySelector("pre").textContent})
         const dressItems = JSON.parse(dressItemsBased);
